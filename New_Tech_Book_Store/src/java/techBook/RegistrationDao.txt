@@ -1,0 +1,32 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package techBook;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ *
+ * @author vikash.suman
+ */
+public class RegistrationDAO implements RegistrationServicces {
+    private SessionFactory sessionFactory;
+    public void setSessionFactory(SessionFactory sessionFactory) {
+     this.sessionFactory = sessionFactory;
+ }
+ public RegistrationDAO() {
+ Configuration configuration = new Configuration().configure();
+  }
+ public void insertStudent(Customer cst)
+    {
+        Session session = sessionFactory.openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.save(cst);
+        tx.commit();
+    }
+
+}

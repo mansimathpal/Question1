@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Book Information</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="BaseTemplate.xhtml">
+            <ui:define name="body">
+                <p align="center" style="font-family: 'GILL',HELVETICA, sans-serif;color: black;">
+           <p align="center" style="color:GREEN; font-size:20pt; font-weight: bold; font-family: cursive " >Book Information<br/><br/></p>
+                <p align="center"> <img alt="The image cannot be displayed" src="images/Feedback.jpg"/> </p>
+        </p>
+                  <table border="0" width="80%" align="center">
+                         <h:form>
+                         <tr>
+                             <td>
+                                 Select Book Name
+                             </td>
+                             <td>
+                                 :
+                             </td>
+                             <td align="center">
+                                 <h:selectOneMenu
+                                     id="cname" value="#{checkBookDetails.bookName}" valueChangeListener="#{checkBookDetails.BookDetailsAction}" onchange="this.form.submit()">
+                                     <f:selectItem itemValue="" itemLabel="" />
+                                     <f:selectItem itemValue="A Noted Traveller" itemLabel="A Noted Traveller" />
+                                  <f:selectItem itemValue="Silverlight 4" itemLabel="Silverlight 4" />
+                                  <f:selectItem itemValue="HTML 5" itemLabel="HTML 5" />
+                                    <f:selectItem itemValue="America For Me" itemLabel="America For Me" />
+                                 </h:selectOneMenu>
+                             </td>
+                         </tr>
+                             <tr>
+                                 <td>
+                                     <br/>
+                                     Book Id
+                                 </td>
+                                 <td>
+                                     <br/>
+                                 :
+                             </td>
+
+                                 <td align="center">
+                                     <br/>
+                                     <h:outputText id="cid" binding="#{checkBookDetails.bookId}"/>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     Category
+                                 </td>
+                                 <td>
+                                 :
+                             </td>
+
+                                 <td align="center">
+                                     <h:outputText id="cdur" binding="#{checkBookDetails.category}"/>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     Author
+                                 </td>
+                                 <td>
+                                 :
+                             </td>
+
+                                 <td align="center">
+                                     <h:outputText id="celig" binding="#{checkBookDetails.bookAuthor}"/>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     Book Price
+                                 </td>
+                                 <td>
+                                 :
+                             </td>
+
+                                 <td align="center">
+                                     <h:outputText id="cfee" binding="#{checkBookDetails.bookPrice}"/>
+                                 </td>
+                             </tr>
+
+                         </h:form>
+                     </table>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

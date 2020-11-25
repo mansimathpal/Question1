@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:lc="http://xmlns.jcp.org/jsf/composite/LoginControl">
+    <h:head>
+        <title>NewTechBookStore</title>
+        <style>
+table, tr {
+    border: 2px solid white;
+}
+</style>
+        <link href="./resources/ExternalStyleSheet.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <table border="0" bgcolor="#808080" align="top" width="100%" style="height:90px">
+            <tr>
+              <td bgcolor="Yellow" align="center"> <!--font color="Gold"-->
+                  <p style="font-family: 'SHOWCARD GOTHIC',sans-serif; font-size: 35pt; font-stretch: expanded; color: green">New Tech Book Store®
+                  </p>
+                </td>
+                <td align="left" width="180">
+                    <img alt=""  src="images/books.gif" width="250" height="150" align="right"/>
+                </td>
+            </tr>
+        </table>
+        <table align="left" width="100%" style="height:450px">
+            <tr>
+            <td bgcolor="yellow"  width="20%" valign="top" align="center"> <br/>
+              <h:form>
+                  <h:commandLink styleClass="fFormat" action="for home" value="Home"/><br/><br/>
+                <h:commandLink styleClass="fFormat" action="for About Us" value="About Us"/><br/><br/>
+                <h:commandLink styleClass="fFormat" action="for Registration Form"  value="Registration"/><br/><br/>
+                <h:commandLink styleClass="fFormat" action="for Contact" value="Contact Us"/><br/><br/>
+                <h:commandLink styleClass="fFormat" action="Book Details" value="Book Information"/><br/><br/>
+                <h:commandLink styleClass="fFormat" action="OrderDetails" value="Order Books Online"/><br/><br/>
+             </h:form>
+            <lc:LoginControl userName="#{checkLogin.userID}" password="#{checkLogin.password}" submitValue="Submit" resetValue="Reset"/>
+           </td>
+           <td bgcolor="white" width="50%" style="vertical-align: top;">
+               <ui:insert name="body"/>
+           </td>
+           <td align="center" width="30%" bgcolor="Navy">
+              <p style="color: floralwhite; font-size: 13pt; font-family: cursive">
+                    Why buy from us?</p><br/>
+                    <p align="Left" style="font-family: 'GILL',HELVETICA, sans-serif; color: #FFE4B5;">
+                      * Over 4.5 million books<br/>
+                      * Lowest possible prices<br/>
+                      * Books for all age groups<br/>
+                      * Order a book before it hits the market<br/>
+                      * Promotion schemes
+                    </p>
+                    <hr noshade="" size="1"/>
+                    <p style="color: floralwhite; font-size: 13pt; font-family: cursive">
+                     Join the book club
+                      </p>
+
+              <p align="left" style="font-family: 'GILL',HELVETICA, sans-serif; color: #FFE4B5">
+                 * Get 10% discount<br/>
+                 * Get books free worth $20<br/>
+              </p>
+
+              <hr noshade="" size="1"/>
+
+              <p style="color: floralwhite; font-size: 13pt; font-family: cursive">
+                 Customer service
+              </p>
+
+              <p align="left" style="font-family: 'GILL',HELVETICA, sans-serif; color: #FFE4B5">
+                 * All orders are executed in the least possible time.<br/>
+                 * Books are supplied all over the globe.<br/>
+                 * Books are thoroughly checked before dispatch.<br/>
+                 * Multiple modes of payment are available.
+              </p>
+            </td>
+            </tr>
+      </table>
+    </h:body>
+</html>

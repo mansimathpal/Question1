@@ -1,0 +1,4 @@
+package university;
+public interface RegistrationServices{
+public String insertStudent(Student std, Studentcourse sc);
+}

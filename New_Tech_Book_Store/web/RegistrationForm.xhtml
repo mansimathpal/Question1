@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>NewTechBookStore</title>
+        <link href="./resources/ExternalStyleSheet.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <ui:composition template="BaseTemplate.xhtml">
+            <ui:define name="body">             
+         <p align="center" style="font-family: cursive; color: green; font-size: 20pt; font-weight: bold">Registration Form</p>
+   <h:form>
+       <table align="center">
+       <tr>
+           <td>First Name:</td>
+           <td>
+           <h:inputText id="name" value="#{registerUser.firstName}" required="true" requiredMessage="You must enter the first name"/>
+           <h:message for="name" style="color:red"/></td>
+           
+        </tr>
+        <tr>
+           <td>Last Name:</td>
+           <td>
+           <h:inputText id="lname" value="#{registerUser.lastName}" required="true" requiredMessage="You must enter the last name"/>
+           <h:message for="lname" style="color:red"/>
+           </td>
+         </tr>
+         <tr>
+            <td>Select Gender:</td>
+            <td>
+                <h:selectOneRadio id="gender" value="#{registerUser.gender}" required="true" requiredMessage="You must select the gender">
+                    <f:selectItem itemValue="m" itemLabel="Male"  />
+                    <f:selectItem itemValue="f" itemLabel="Female" />
+                    </h:selectOneRadio>
+                <h:message for="gender" style="color:red"/>
+           </td>
+        </tr>
+        <tr>
+           <td>Date of birth:
+                 </td>
+                 <td>
+               <h:inputText id="dob" value="#{registerUser.dateofBirth}" required="true" requiredMessage="You must enter the date of birth" converterMessage="Enter date as mm/dd/yy, such as 04/15/82">
+                            <f:convertDateTime pattern="MM/dd/yy"/>
+                        </h:inputText>
+                     <h:message for="dob" style="color:red"/>
+                 </td>
+               </tr>
+               <tr>
+                 <td>
+                Address:
+                 </td>
+                 <td>
+                 <h:inputTextarea id="address" rows="3" value="#{registerUser.address}" required="true" requiredMessage="You must enter the address"/>
+                 <h:message for="address" style="color:red"/>
+                 </td>
+               </tr>
+
+               <tr>
+                 <td>
+                 Contact number:
+                 </td>
+                 <td>
+                 <h:inputText id="ph" value="#{registerUser.contactNumber}" required="true" requiredMessage="You must enter phone number in the format, 11-111-11111111" validatorMessage="you must enter phone number in the format, 11-111-11111111">
+                            <f:validateRegex pattern="[0-9]{2}-+[0-9]{3}-+[0-9]{8}"/>
+                           </h:inputText>
+                     <h:message for="ph" style="color:red"/>
+                 </td>
+              </tr>
+
+              <tr>
+                <td>
+                E-mail Id:
+                </td>
+                <td>
+                    <f:ajax event="change" render="emailError">
+                     <h:inputText id="email" value="#{registerUser.emailID}" required="true" requiredMessage="You must enter an e-mail address in the format, abc@domain.com" validator="#{registerUser.validateEmail}"/>
+                     <h:message for="email" style="color:red" id="emailError"/>
+                     </f:ajax>
+                </td>
+             </tr>
+
+             <tr>
+               <td>
+               User Id:
+               </td>
+               <td>
+              <h:inputText  id="uid" size="10" value="#{registerUser.userID}" required="true" requiredMessage="You must enter the user name" validatorMessage="The user Id must be 6 characters long">
+                          <f:validateLength minimum="6"/>
+                     </h:inputText>
+                   <h:message for="uid" style="color:red"/>
+                   
+               </td>
+            </tr>
+            <tr>
+              <td>
+              Password:
+              </td>
+              <td>
+                <h:inputSecret id="pass" size="12" value="#{registerUser.password}" required="true" requiredMessage="You must enter the password" validatorMessage="Password must be at least 5 characters long" validator="#{registerUser.validateFinalPassword}">
+                     <f:validateLength minimum="5"/>
+                </h:inputSecret>
+                <h:message for="pass" style="color:red"/>
+               </td>
+            </tr>
+            <tr>
+              <td>
+              Confirm password:
+              </td>
+              <td>
+                  <h:inputSecret id="cpass" size="12" value="#{registerUser.cPassword}" required="true" requiredMessage="You must confirm the password" validator="#{registerUser.validateCPassword}"/>
+              <h:message for="cpass" style="color:red"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="right"><br/>
+                  <h:commandButton styleClass="button" action="Success" value="Submit" actionListener="#{registerUser.submitAction}"/>
+              </td>
+              <td align="left"><br/>
+                  <h:commandButton styleClass="button" value="Reset" immediate="true" action="RegistrationForm"/>
+              </td>
+            </tr>
+            </table>
+        </h:form>
+      </ui:define>
+    </ui:composition>
+ </h:body>
+</html>

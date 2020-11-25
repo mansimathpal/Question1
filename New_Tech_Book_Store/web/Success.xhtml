@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Registration Successful</title>
+        <link href="./resources/ExternalStyleSheet.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+
+         <table border="0" bgcolor="#808080" align="top" width="100%" style="height:90px">
+            <tr>
+              <td bgcolor="Yellow" align="center"> <!--font color="Gold"-->
+                  <p style="font-family: 'SHOWCARD GOTHIC',sans-serif; font-size: 25pt; color: green">New Tech Book Store®
+                  </p>
+                </td>
+                <td align="left" width="180">
+                    <img alt=""  src="images/books.gif" width="180" height="90" align="right"/>
+                </td>
+            </tr>
+        </table>
+
+       <p style="color:darkblue; font-size:15pt">
+        <br/><br/>
+        Welcome <h:outputText value="#{registerUser.firstName}"/> <h:outputText value="#{registerUser.lastName}"/>
+        <br/>
+        You have been successfully registered with our website.
+        <br/>
+        
+        Your User ID is <h:outputText value="#{registerUser.userID}"/> </p><br/><br/>
+        <h:form>
+            <h:commandButton styleClass="button" action="index" value="Home"/>
+        </h:form>
+    </h:body>
+</html>
+

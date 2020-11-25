@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+<application>
+<el-resolver> org.springframework.web.jsf.el.SpringBeanFacesELResolver
+</el-resolver>
+</application>
+
+<navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+    <from-outcome>for home</from-outcome>
+    <to-view-id>/index.xhtml</to-view-id>
+    <redirect/>
+    </navigation-case>
+     <navigation-case>
+    <from-outcome>for About Us</from-outcome>
+    <to-view-id>/About Us.xhtml</to-view-id>
+    <redirect/>
+    </navigation-case>
+     <navigation-case>
+    <from-outcome>for Registration Form</from-outcome>
+    <to-view-id>/RegistrationForm.xhtml</to-view-id>
+    <redirect/>
+    </navigation-case>
+     <navigation-case>
+    <from-outcome>for Contact</from-outcome>
+    <to-view-id>/Contact.xhtml</to-view-id>
+    <redirect/>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+        <from-action>#{checkLogin.Check}</from-action>
+        <from-outcome>true</from-outcome>
+        <to-view-id>/PersonalProfile.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-action>#{checkLogin.Check}</from-action>
+        <from-outcome>false</from-outcome>
+        <to-view-id>/Error.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+</faces-config>

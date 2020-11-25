@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+    <h:head>
+        <title>Facelet Title</title>
+         <link href="./resources/ExternStyleSheet.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <composite:interface>
+         <composite:attribute name="userName" default=""/>
+         <composite:attribute name="password" default="pwd"/>
+         <composite:attribute name="submitValue" default="Submit"/>
+         <composite:attribute name="resetValue" default="Reset"/>
+         <composite:valueHolder name="id"/>
+         <composite:valueHolder name="pass"/>
+        </composite:interface>
+       <composite:implementation>
+        <br/>   <br/> <br/>   <br/>
+          <table  cellspacing="0.5" border="1" align="center" width="100%" bgcolor="FFFFFF">
+            <tr>
+                <td bgcolor="#000080" align="center"><p style="color:floralwhite">Account Login</p></td>
+            </tr>
+            <tr>
+            <td bgcolor="#000080">
+               <table  border="0" align="center" width="100%" >
+	         <h:form>
+                   <tr>
+                     <td align="left"><p style="color:floralwhite"> Id: </p>
+                     </td>
+                       <td align="left"><h:inputText  size="8" id="id" value="#{cc.attrs.userName}" ></h:inputText></td>
+                   </tr>
+                   <tr>
+                     <td align="left"><p style="color:floralwhite">Password:</p></td>
+                     <td align="left"><h:inputSecret size="10" id="pass" value="#{cc.attrs.password}"></h:inputSecret></td>
+                   </tr>
+                   <tr>
+                       <td align="center">   <h:commandButton value="#{cc.attrs.submitValue}" styleClass="button" action="#{checkLogin.Check}"/></td>
+                       <td align="center"><h:commandButton value="#{cc.attrs.resetValue}" type="reset" styleClass="button"/></td>
+                    </tr>
+                </h:form>
+              </table>
+            </td>
+          </tr>
+          </table>
+       </composite:implementation>
+
+    </h:body>
+</html>

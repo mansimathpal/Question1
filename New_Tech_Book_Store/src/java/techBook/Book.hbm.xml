@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 Jul, 2014 10:54:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="techBook.Book" table="BOOK" schema="TECHBOOK">
+        <id name="bookid" type="string">
+            <column name="BOOKID" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="bookname" type="string">
+            <column name="BOOKNAME" length="40" />
+        </property>
+        <property name="category" type="string">
+            <column name="CATEGORY" length="40" />
+        </property>
+        <property name="author" type="string">
+            <column name="AUTHOR" length="40" />
+        </property>
+        <property name="price" type="string">
+            <column name="PRICE" length="20" />
+        </property>
+        <property name="stock" type="java.lang.Integer">
+            <column name="STOCK" />
+        </property>
+    </class>
+</hibernate-mapping>

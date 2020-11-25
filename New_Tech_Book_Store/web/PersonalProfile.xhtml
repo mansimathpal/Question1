@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <h:head>
+        <title>NewTechBookStore</title>
+        <link href="./resources/ExternalStyleSheet.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <table border="0" bgcolor="#808080" align="top" width="100%" style="height:90px">
+            <tr>
+              <td bgcolor="Yellow" align="center"> <!--font color="Gold"-->
+                 <p style="font-family: 'SHOWCARD GOTHIC',sans-serif; font-size: 35pt; font-stretch: expanded; color: green">New Tech Book Store®
+                  </p>
+                </td>
+                <td align="left" width="180">
+                    <img alt=""  src="images/books.gif" width="250" height="150" align="right"/>
+                </td>
+            </tr>
+        </table>
+                  <br/>
+                    <table bgcolor="black" cellpadding="12px" border="1" width="60%" align="center"  style="height:120px">
+                                            <tr>
+                                                <td bgcolor="white">
+
+                    <table border="0" width="100%" bgcolor="white" align="center" style="height: 100px">
+                        <tr>
+                            <td>
+
+
+                            First Name
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td><h:outputText value="#{checkLogin.firstName}"/>
+                                </td>
+</tr>
+                        <tr>
+                            <td>
+
+
+                            Last Name
+                            </td>
+                            <td>
+                                :
+                            </td>
+
+                            <td><h:outputText value="#{checkLogin.lastName}"/>
+                                </td>
+</tr>
+
+                        <tr>
+                            <td>
+                           Gender
+                            </td>
+                            <td>
+                                :
+                            </td>
+
+                            <td><h:outputText value="#{checkLogin.gender}"/>
+                                </td>
+</tr>
+                        <tr>
+                            <td>
+                         Date of birth
+                            </td>
+                            <td>
+                                :
+                            </td>
+
+                            <td><h:outputText value="#{checkLogin.dob}"/>
+                                <h:outputLabel value="(yyyy-mm-dd)"/>
+                                </td>
+
+</tr>
+                          <tr>
+                            <td>
+                        Address
+                            </td>
+                              <td>
+                                :
+                            </td>
+
+                              <td><h:outputText value="#{checkLogin.address}"/>
+                                </td>
+</tr>
+                          <tr>
+                            <td>
+                        Phone number
+                            </td>
+                              <td>
+                                :
+                            </td>
+
+                            <td><h:outputText value="#{checkLogin.phoneNumber}"/>
+                                </td>
+</tr>
+                         <tr>
+                            <td>
+                        E-mail Id
+                            </td>
+                             <td>
+                                :
+                            </td>
+
+                            <td><h:outputText value="#{checkLogin.emailID}"/>
+                                </td>
+</tr>
+                          <tr>
+                            <td>
+
+                            </td>
+                             <td>
+
+                            </td>
+
+                            <td><br/>
+                                <h:form>
+                                    <h:commandButton styleClass="button" value="Log Out" action="index"/>
+                                    </h:form>
+                                </td>
+</tr>
+
+
+                    </table>
+                                                          </td>
+
+           </tr>
+                      </table>
+    </h:body>
+</html>
+
